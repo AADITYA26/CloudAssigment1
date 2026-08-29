@@ -18,7 +18,7 @@ def show_product():
 
 @app.get("/load")
 def cpu_load():
-    end_time = time.time() + 2
+    end_time = time.time() + 4
 
     while time.time() < end_time:
         x = 12345 * 67890
