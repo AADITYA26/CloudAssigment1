@@ -3,11 +3,11 @@ import time
 app = FastAPI()
 
 @app.get("/")
-async def welcome():
+def welcome():
     return {"message":"Welcome to my prodcuts page"}
 
 @app.get("/showProduct")
-async def show_product():
+def show_product():
     return {
         "id": 101,
         "name": "Laptop",
@@ -17,7 +17,7 @@ async def show_product():
     }
 
 @app.get("/load")
-async def cpu_load():
+def cpu_load():
     end_time = time.time() + 5
 
     while time.time() < end_time:
