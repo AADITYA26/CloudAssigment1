@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-
+import time
 app = FastAPI()
 
 @app.get("/")
@@ -15,3 +15,13 @@ async def show_product():
         "category": "Electronics",
         "in_stock": True
     }
+
+@app.get("/load")
+async def cpu_load():
+    end_time = time.time() + 2
+
+    while time.time() < end_time:
+        x = 12345 * 67890
+        x = x * x
+
+    return {"message": "CPU load completed"}
